@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NyttLiv UF | Möbler med en andra chans</title>
+<meta name="description" content="NyttLiv UF återbrukar begagnade möbler och ger dem nytt liv. Har du en möbel du vill bli av med? Skicka in den för kostnadsfri bedömning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --forest:#062d22; --forest2:#0a3b2d; --forest3:#114d3a;
+ --gold:#d5ad55; --gold2:#f0cf82; --cream:#f3eee1; --ink:#122d25;
+ --line:rgba(213,173,85,.35); --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(4,37,28,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(213,173,85,.2)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{height:64px;width:64px;object-fit:contain}
+.navlinks{display:flex;align-items:center;gap:34px}
+.navlinks a{color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+.navlinks a:hover{color:var(--gold2)}
+.social{display:flex;gap:18px}
+.social a{font-size:22px}
+.hero{min-height:590px;background:
+linear-gradient(90deg,rgba(4,39,29,.98) 0%,rgba(4,39,29,.91) 47%,rgba(4,39,29,.35) 100%),
+radial-gradient(circle at 75% 35%,#416653 0,#183d2e 30%,#062d22 70%);
+color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-7%;top:-15%;width:55%;height:140%;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(213,173,85,.08));transform:skewX(-8deg)}
+.hero-inner{position:relative;z-index:2;padding:82px 0 92px;max-width:760px}
+.hero-logo{width:130px;height:130px;object-fit:contain;margin-bottom:18px}
+.kicker{color:var(--gold2);text-transform:uppercase;letter-spacing:3px;font-weight:700;font-size:12px;margin-bottom:14px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+h1{font-size:clamp(52px,7vw,88px);line-height:.98;margin-bottom:18px}
+.hero h2{font-size:clamp(22px,3vw,32px);font-weight:500;line-height:1.25;max-width:650px;margin-bottom:20px}
+.hero p{font-size:17px;max-width:650px;color:#e3ebe6;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;gap:13px;border:0;border-radius:999px;padding:15px 25px;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.7px;cursor:pointer}
+.btn-gold{background:var(--gold2);color:var(--forest)}
+.btn-dark{background:var(--forest);color:#fff}
+.btn-outline{border:1px solid var(--gold);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.trust{background:var(--forest);color:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:27px 20px;text-align:center;border-right:1px solid var(--line)}
+.trust-item:last-child{border-right:0}
+.icon{font-size:30px;color:var(--gold2);margin-bottom:6px}
+.trust-item h3{font-size:18px;margin-bottom:5px}
+.trust-item p{font-size:13px;color:#d5e1db}
+section{padding:80px 0}
+.section-head{text-align:center;max-width:730px;margin:0 auto 45px}
+.section-head .kicker{color:#9b7a2e;margin-bottom:7px}
+.section-head h2{font-size:42px;color:var(--forest);margin-bottom:10px}
+.section-head p{color:#5d6b64}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:380px}
+.split-image{background:linear-gradient(135deg,#193f30,#53745e);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.chair{width:180px;height:230px;border:8px solid #a97e43;border-bottom-width:18px;border-radius:12px 12px 35px 35px;position:relative;box-shadow:0 25px 40px rgba(0,0,0,.25)}
+.chair:before{content:"";position:absolute;left:28px;right:28px;top:35px;height:95px;border-radius:20px 20px 8px 8px;background:#2b5c49}
+.chair:after{content:"";position:absolute;left:23px;right:23px;bottom:-48px;height:55px;border-left:8px solid #a97e43;border-right:8px solid #a97e43}
+.split-copy{padding:48px;background:#f7f2e6}
+.split-copy h2{font-size:38px;color:var(--forest);margin-bottom:8px}
+.split-copy h3{font-size:20px;margin-bottom:18px}
+.split-copy p{max-width:520px;margin-bottom:20px}
+.pickup{background:var(--forest);color:#fff}
+.pickup .section-head h2{color:#fff}
+.pickup .section-head p{color:#d8e4dd}
+.pickup-card{background:linear-gradient(135deg,#0e4937,#062d22);border:1px solid var(--line);border-radius:14px;padding:42px}
+.pickup-card h3{font-size:29px;color:var(--gold2);margin-bottom:12px}
+.pickup-card p{color:#e3ebe6}
+.pickup-card strong{color:#fff}
+.notice{margin-top:20px;padding:17px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:13px;color:#dbe5df}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #d3cbb9;border-bottom:1px solid #d3cbb9}
+.step{padding:28px 24px;border-right:1px solid #d3cbb9}
+.step:last-child{border-right:0}
+.step-num{display:inline-flex;width:35px;height:35px;border-radius:50%;background:var(--forest);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+.step h3{font-size:20px;color:var(--forest);margin-bottom:7px}
+.step p{font-size:14px;color:#59675f}
+.form-section{background:linear-gradient(180deg,#062d22,#0a392b);color:#fff}
+.form-wrap{display:grid;grid-template-columns:1.4fr .7fr;gap:35px;align-items:start}
+.form-card{border:1px solid var(--line);border-radius:14px;padding:32px;background:rgba(255,255,255,.035)}
+.form-card h2{font-size:36px;margin-bottom:7px}
+.form-card .intro{color:#d3e0d9;margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:12px;font-weight:700;color:#e4ece7}
+input,select,textarea{font:inherit;color:#fff;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:13px 14px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold2)}
+textarea{min-height:110px;resize:vertical}
+select option{color:#111}
+input[type=file]{padding:10px}
+.help{font-size:11px;color:#afc0b7}
+.form-side{border:1px solid var(--line);border-radius:14px;padding:28px}
+.form-side h3{font-size:24px;color:var(--gold2);margin-bottom:15px}
+.check{display:flex;gap:10px;margin:12px 0;font-size:13px;color:#d8e4dd}
+.check b{color:var(--gold2)}
+.status{margin-top:14px;color:var(--gold2);font-size:13px;min-height:20px}
+.products{background:#f7f2e6}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 12px 30px rgba(17,45,37,.08)}
+.product-img{height:220px;background:linear-gradient(135deg,#d7d0bf,#78907f);display:flex;align-items:center;justify-content:center;font-size:70px}
+.product-body{padding:23px}
+.product-body h3{font-size:22px;color:var(--forest);margin-bottom:5px}
+.product-body p{font-size:14px;color:#647169}
+.about{background:#fff}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.person{text-align:center;padding:25px 12px;border:1px solid #ddd5c4;border-radius:9px}
+.person strong{display:block;color:var(--forest);font-size:16px}
+.contact{background:var(--forest);color:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.contact-card{padding:26px;border:1px solid var(--line);border-radius:9px}
+.contact-card h3{color:var(--gold2);font-size:20px;margin-bottom:7px}
+.contact-card a{text-decoration:none}
+footer{background:#031b14;color:#b8c9c1;text-align:center;padding:24px;font-size:12px}
+@media(max-width:850px){
+ .navlinks{gap:14px}.navlinks a:nth-child(-n+2){display:none}
+ .trust-grid,.steps,.product-grid,.team,.contact-grid{grid-template-columns:1fr 1fr}
+ .split,.form-wrap{grid-template-columns:1fr}
+ .split-image{min-height:280px}
+ .step:nth-child(2){border-right:0}
+ .step{border-bottom:1px solid #d3cbb9}
+}
+@media(max-width:560px){
+ .nav{height:70px}.nav-logo{height:55px;width:55px}
+ .navlinks{gap:8px}.navlinks a{font-size:11px}
+ .social{display:none}
+ section{padding:60px 0}
+ .hero-inner{padding:65px 0}.hero-logo{width:100px;height:100px}
+ .hero h1{font-size:53px}
+ .trust-grid,.steps,.product-grid,.team,.contact-grid,.form-grid{grid-template-columns:1fr}
+ .trust-item{border-right:0;border-bottom:1px solid var(--line)}
+ .step{border-right:0}
+ .form-card,.pickup-card{padding:23px}
+ .section-head h2{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#hem" aria-label="NyttLiv UF"><img src="logo.png" class="nav-logo" alt="NyttLiv UF logotyp"></a>
+    <nav class="navlinks">
+      <a href="#hem">Hem</a>
+      <a href="#om-oss">Om oss</a>
+      <a href="#produkter">Våra möbler</a>
+      <a href="#sa-fungerar-det">Så fungerar det</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="social"><a href="https://www.instagram.com/nytt_livuf/" target="_blank" aria-label="Instagram">◎</a><a href="mailto:nyttliv.kontakt@gmail.com" aria-label="E-post">✉</a></div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="hem">
+ <div class="container hero-inner">
+   <img src="logo.png" class="hero-logo" alt="NyttLiv UF">
+   <div class="kicker">Återbruk • Förnyelse • Hållbarhet</div>
+   <h1>NyttLiv UF</h1>
+   <h2>Ge möbler nytt liv – tillsammans för en mer hållbar framtid.</h2>
+   <p>Vi är ett UF-företag som köper och säljer begagnade möbler. Genom att återbruka möbler bidrar vi till en mer hållbar konsumtion och minskar onödigt avfall.</p>
+   <div class="buttons">
+    <a class="btn btn-gold" href="#produkter">SE VÅRA MÖBLER →</a>
+    <a class="btn btn-outline" href="#skicka-in">SKICKA IN DIN MÖBEL</a>
+   </div>
+ </div>
+</section>
+
+<section class="trust">
+ <div class="container trust-grid">
+  <div class="trust-item"><div class="icon">♧</div><h3>Återbruk</h3><p>Vi ger möbler nytt liv och minskar avfall.</p></div>
+  <div class="trust-item"><div class="icon">♡</div><h3>Hållbart val</h3><p>Bra för miljön, bra för framtiden.</p></div>
+  <div class="trust-item"><div class="icon">◇</div><h3>Prisvärt</h3><p>Hög kvalitet till ett bättre pris.</p></div>
+  <div class="trust-item"><div class="icon">⌂</div><h3>Lokalt</h3><p>Vi verkar i Jönköping med omnejd.</p></div>
+ </div>
+</section>
+
+<section id="om-oss" style="padding-bottom:0">
+ <div class="split">
+  <div class="split-image"><div class="chair" aria-hidden="true"></div></div>
+  <div class="split-copy">
+   <div class="kicker">Vår idé</div>
+   <h2>Köp möbler</h2>
+   <h3>Unika möbler med historia.</h3>
+   <p>Hos oss hittar du noggrant utvalda möbler som fått nytt liv. Varje möbel är tvättad, rengjord och i gott skick – redo för ett nytt hem.</p>
+   <a class="btn btn-dark" href="#produkter">SE VÅRA MÖBLER →</a>
+  </div>
+ </div>
+</section>
+
+<section class="pickup" id="pickup">
+ <div class="container">
+  <div class="section-head">
+   <div class="kicker">Har du en möbel?</div>
+   <h2>Vi kan hämta den – enkelt, snabbt och kostnadsfritt!</h2>
+   <p>Skicka in din möbel för en första bedömning. Vi återkommer så snart som möjligt.</p>
+  </div>
+  <div class="pickup-card">
+   <h3>🚚 Så bedömer vi din möbel</h3>
+   <p>Skicka <strong>bilder, en kort beskrivning och adressen</strong> till oss via formuläret nedan, e-post eller telefon.</p>
+   <br>
+   <p>Först bedömer vi om möbeln är intressant för NyttLiv utifrån exempelvis <strong>skick, storlek, efterfrågan och möjlighet till vidareförsäljning.</strong> Därefter bedömer vi <strong>avståndet och om vi har möjlighet att ta oss dit.</strong></p>
+   <br>
+   <p>Om båda bedömningarna fungerar hämtar vi möbeln <strong>kostnadsfritt – normalt inom 24 timmar.</strong></p>
+   <br>
+   <p>Vid <strong>längre avstånd</strong> kan en mindre kostnad för transport/frakt tillkomma. Detta meddelas alltid i förväg innan vi bestämmer hämtningen.</p>
+   <div class="notice"><strong>Viktigt:</strong> Att skicka in en möbel innebär inte en garanti för hämtning. Vi behöver först godkänna både möbeln och hämtningen utifrån skick, storlek, efterfrågan, avstånd och vår möjlighet att hämta.</div>
+  </div>
+ </div>
+</section>
+
+<section id="sa-fungerar-det">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Processen</div><h2>Så här går det till</h2><p>Enkelt, tryggt och smidigt.</p></div>
+  <div class="steps">
+   <div class="step"><span class="step-num">1</span><h3>Skicka in din möbel</h3><p>Fyll i formuläret med bilder, beskrivning, adress och kontaktuppgifter.</p></div>
+   <div class="step"><span class="step-num">2</span><h3>Vi gör en bedömning</h3><p>Vi kollar skick, storlek, efterfrågan och om vi kan hämta den.</p></div>
+   <div class="step"><span class="step-num">3</span><h3>Vi kontaktar dig</h3><p>Om vi är intresserade och avståndet fungerar hör vi av oss så snart som möjligt.</p></div>
+   <div class="step"><span class="step-num">4</span><h3>Vi hämtar möbeln</h3><p>Om allt stämmer hämtar vi den kostnadsfritt – normalt inom 24 timmar.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="form-section" id="skicka-in">
+ <div class="container form-wrap">
+  <div class="form-card">
+   <div class="kicker">Kostnadsfri bedömning</div>
+   <h2>Skicka in din möbel</h2>
+   <p class="intro">Fyll i formuläret så återkommer vi med besked så snart som möjligt.</p>
+   <form id="furnitureForm" action="https://formsubmit.co/nyttliv.kontakt@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Ny möbelförfrågan – NyttLiv UF">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_template" value="table">
+    <div class="form-grid">
+     <div class="field"><label for="name">Namn *</label><input id="name" name="Namn" required></div>
+     <div class="field"><label for="phone">Telefonnummer *</label><input id="phone" name="Telefonnummer" type="tel" required></div>
+     <div class="field"><label for="email">E-post *</label><input id="email" name="E-post" type="email" required></div>
+     <div class="field"><label for="area">Adress/område *</label><input id="area" name="Adress/område" required></div>
+     <div class="field"><label for="type">Typ av möbel *</label><select id="type" name="Typ av möbel" required><option value="">Välj...</option><option>Soffa</option><option>Fåtölj</option><option>Bord</option><option>Stol</option><option>Förvaring</option><option>Säng</option><option>Annan</option></select></div>
+     <div class="field"><label for="size">Ungefärliga mått</label><input id="size" name="Mått" placeholder="t.ex. 200 × 90 × 80 cm"></div>
+     <div class="field full"><label for="description">Beskriv möbeln *</label><textarea id="description" name="Beskrivning" required placeholder="Skick, ålder, skador, material och annat som kan vara bra att veta..."></textarea></div>
+     <div class="field full"><label for="photos">Ladda upp bilder (max 4) *</label><input id="photos" name="Bilder" type="file" accept="image/jpeg,image/png,image/webp" multiple required><span class="help">JPG, PNG eller WebP. Bilderna används för vår bedömning.</span></div>
+     <div class="field full"><button class="btn btn-gold" type="submit">SKICKA IN FÖR BEDÖMNING →</button></div>
+    </div>
+   </form>
+   <div class="status" id="status" aria-live="polite"></div>
+  </div>
+  <aside class="form-side">
+   <h3>Viktigt att veta</h3>
+   <div class="check"><b>✓</b><span>Vi bedömer alltid om möbeln är intressant för oss och om vi kan ta oss dit.</span></div>
+   <div class="check"><b>✓</b><span>Hämtning är normalt <b>kostnadsfri</b> inom vårt rimliga hämtningsområde.</span></div>
+   <div class="check"><b>✓</b><span>Vid längre avstånd kan en transportkostnad tillkomma.</span></div>
+   <div class="check"><b>✓</b><span>Eventuell kostnad meddelas alltid i förväg.</span></div>
+   <div class="check"><b>✓</b><span>Att skicka in en förfrågan innebär inte att hämtning garanteras.</span></div>
+   <p style="margin-top:25px;color:var(--gold2);font-family:'Playfair Display',serif;font-size:20px">Tillsammans minskar vi avfall – och skapar nya möjligheter.</p>
+  </aside>
+ </div>
+</section>
+
+<section class="products" id="produkter">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Återbrukat med omsorg</div><h2>Våra möbler</h2><p>Här lägger vi upp våra aktuella möbler när de är redo för sitt nästa hem.</p></div>
+  <div class="product-grid">
+   <article class="product"><div class="product-img">🪑</div><div class="product-body"><h3>Kommer snart</h3><p>Nya återbrukade möbler läggs upp här.</p></div></article>
+   <article class="product"><div class="product-img">🛋️</div><div class="product-body"><h3>Unika fynd</h3><p>Varje möbel är unik och får en andra chans.</p></div></article>
+   <article class="product"><div class="product-img">✨</div><div class="product-body"><h3>Färdig för nytt hem</h3><p>Rengjord, fräschad och presenterad för sin nya ägare.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Vilka är vi?</div><h2>Om NyttLiv UF</h2><p>Vi är fyra gymnasieelever som driver NyttLiv UF med en enkel idé: bra möbler ska inte behöva slängas bara för att någon inte längre behöver dem.</p></div>
+  <div class="team">
+   <div class="person"><strong>Alfred Lindén</strong></div>
+   <div class="person"><strong>Conrad Erlén</strong></div>
+   <div class="person"><strong>Jonathan Block</strong></div>
+   <div class="person"><strong>Zebastian Petrasek</strong></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="kontakt">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Hör av dig</div><h2>Kontakta oss</h2><p>Har du en möbel, en fråga eller vill du veta mer? Vi hjälper dig gärna.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><h3>✉ E-post</h3><a href="mailto:nyttliv.kontakt@gmail.com">nyttliv.kontakt@gmail.com</a></div>
+   <div class="contact-card"><h3>☎ Telefon</h3><a href="tel:+46793344735">079-334 47 35</a></div>
+   <div class="contact-card"><h3>◎ Instagram</h3><a href="https://www.instagram.com/nytt_livuf/" target="_blank">@nytt_livuf</a></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer>© 2026 NyttLiv UF · Återbruk med nytt liv</footer>
+
+<script>
+const form=document.getElementById('furnitureForm');
+const photos=document.getElementById('photos');
+const status=document.getElementById('status');
+photos.addEventListener('change',()=>{
+ if(photos.files.length>4){photos.value='';status.textContent='Välj högst 4 bilder.';return;}
+ status.textContent=photos.files.length ? `${photos.files.length} bild(er) valda.` : '';
+});
+form.addEventListener('submit',(e)=>{
+ if(photos.files.length>4){e.preventDefault();status.textContent='Välj högst 4 bilder.';return;}
+ status.textContent='Skickar din förfrågan…';
+});
+</script>
+</body>
+</html>
